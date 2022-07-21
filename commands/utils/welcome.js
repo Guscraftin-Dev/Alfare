@@ -14,8 +14,8 @@ const buttons = new MessageActionRow()
     )
 
 const welcomeEmbed = new MessageEmbed()
-        .setTitle('Chartes du serveur')
-        .setDescription('Ne pas spam...')
+        .setTitle('Règlement du serveur')
+        .setDescription('Respecter les chartes de discord (accessible en bas de leur site)')
         .setFooter({ text: 'Bienvenue sur le serveur' })
         .setTimestamp()
 
@@ -27,9 +27,6 @@ module.exports = {
     usage: 'welcome',
     examples: ['welcome'],
     description: "Permet d'envoyer l'embed des règles",
-    async run (client, message, args) {
-        await message.channel.send({ embeds: [welcomeEmbed], components: [buttons] });
-    },
     async runInteraction (client, interaction) {
         await interaction.reply({ embeds: [welcomeEmbed], components: [buttons] });
     }
